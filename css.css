@@ -1,0 +1,91 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.big{
+	margin: 0 auto;
+	width: 1200px;
+	background-color: rgba(13,30,78, 1.0);
+}
+.content1,.content2,.content3,.content6,.content7,.content5,.content4{
+	width: 250px;
+	height: 190px;
+}
+.div1{
+	display: flex;	
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
+p{
+	width: 250px;
+	height: 26px;
+	background: linear-gradient(to right,rgba(9,53,134,1),rgb(20,32,92,1));
+	color: white;
+	font-size: 13px;
+	line-height: 26px;
+	margin: 5px 0;
+	margin-bottom: 20px;
+}
+.div1 .content_2{
+	width: 520px;
+	height: 190px;
+}
+.div2{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
+.div2 .box1 .content1 .sml1{
+	width: 125px;
+	height: 190px;
+	float: left;
+	position: absolute;
+	
+}
+.div2 .box1 .content1 .sml2{
+	float: right;
+	width: 125px;
+	height: 190px;
+}
+.div2 .box2{
+	width: 520px;
+}
+h1{
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	margin-bottom: 0;
+	color: white;
+	
+}
+table{
+	color: white;
+	width: 100%;
+	height: 320px;
+	bottom: 0;
+	position: relative;
+	border-collapse: collapse;
+	font-family: "arial";
+	color: #FFFFFF;
+}
+table tr td:nth-child(1){
+	text-align: left;
+	padding-left: 30px;
+}
+table tr td{
+	text-align: center;
+	border: 1px solid rgb(27,46,133);
+}
+.box2 .content_3{
+	width: 245px;
+	height: 380px;
+	float: left;	
+
+}
+.div2 .box2 .conter{
+	float: right;
+	width: 245px;
+	height: 380px;
+}

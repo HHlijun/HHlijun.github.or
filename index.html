@@ -1,0 +1,1120 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="./echarts.js"></script>
+		<link type="text/css" href="./css.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="big">
+			<h1>云计算服务控制</h1>
+			<div class="div1">
+				<div class="content1" id="content1"></div>
+				<div class="content_2" id="conten2"></div>
+				<div class="content3" id="content3"></div>
+			</div>
+			<div class="div2">
+				<div class="box1">
+					<div class="content1" id="content4">
+						<div class="sml1" id="sml1"></div>
+						<div class="sml2" id="sml2"></div>
+					</div>
+					<div class="content2" id="content5"></div>
+				</div>
+				<div class="box2">
+					<div class="content_3" id="content6">
+						<p>任务管理</p>
+						<table>
+							<tr>
+								<td>类型</td>
+								<td>已应用</td>
+							</tr>
+							<tr>
+								<td>ASGHJDF</td>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>ASGHDJAD</td>
+								<td>20</td>
+							</tr>
+							<tr>
+								<td>D19DJKA</td>
+								<td>11</td>
+							</tr>
+							<tr>
+								<td>ASDHJ78</td>
+								<td>33</td>
+							</tr>
+							<tr>
+								<td>AS7</td>
+								<td>12</td>
+							</tr>
+							<tr>
+								<td>FJKLD9</td>
+								<td>34</td>
+							</tr>
+							<tr>
+								<td>SDFJ7</td>
+								<td>24</td>
+							</tr>
+							<tr>
+								<td>DKSHF1</td>
+								<td>10</td>
+							</tr>
+						</table>
+					</div>
+					<div class="conter">
+						<div class="content4" id="content7"></div>
+						<div class="content5" id="content8"></div>
+					</div>
+				</div>
+				<div class="box3">
+					<div class="content6" id="content9"></div>
+					<div class="content7" id="content10"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		let cont1 = document.getElementById("content1")
+		let img1 = echarts.init(cont1)
+
+		option1 = {
+			title: {
+				text: "{a|任务总量}",
+				textStyle: {
+					color: 'white',
+					fontSize: 15,
+					rich: {
+						a: {
+							backgroundColor: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+									offset: 0,
+									color: 'rgba(9,53,134,1)'
+								},
+								{
+									offset: 1,
+									color: 'rgb(20,32,92,1)'
+								}
+							]),
+							width: 240,
+							height: 25,
+							align: 'left'
+						}
+					}
+				},
+			},
+			color: ['rgb(2,95,227)', 'rgb(1,174,199)', ],
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '2%',
+				containLabel: true
+			},
+			xAxis: [{
+				type: 'category',
+				boundaryGap: false,
+				data: ['202', '203', '204', '205'],
+				axisLine: {
+					show: false,
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					color: "rgba(255, 255, 255, 0.8)"
+				},
+			}],
+			yAxis: [{
+				type: 'value',
+				splitLine: {
+					lineStyle: {
+						// 使用深浅的间隔色
+						color: 'rgba(24,41,87,1)'
+					}
+				},
+				axisLine: {
+					show: false,
+					lineStyle: {
+						color: "rgba(255, 255, 255, 0.8)"
+					}
+				}
+			}],
+			series: [{
+
+					type: 'line',
+					stack: 'Total',
+					smooth: true,
+					lineStyle: {
+						width: 2
+					},
+					showSymbol: false,
+					areaStyle: {
+						opacity: 0.8,
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+								offset: 0,
+								color: 'rgba(0, 221, 255,0.1)'
+							},
+							{
+								offset: 1,
+								color: 'rgba(1,101,242,0.5)'
+							}
+						])
+					},
+					emphasis: {
+						focus: 'series'
+					},
+					data: [140, 232, 101, 264, 90, 340, 250]
+				},
+				{
+					name: 'Line 2',
+					type: 'line',
+					stack: 'Total',
+					smooth: true,
+					lineStyle: {
+						width: 2
+					},
+					showSymbol: false,
+					areaStyle: {
+						opacity: 0.2,
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+								offset: 0,
+								color: 'rgb(0, 221, 255)'
+							},
+							{
+								offset: 1,
+								color: 'rgb(1,101,242)'
+							}
+						])
+					},
+					emphasis: {
+						focus: 'series'
+					},
+					data: [120, 282, 111, 234, 220, 340, 310]
+				},
+			]
+		};
+		img1.setOption(option1)
+
+		let cont2 = document.getElementById("conten2")
+		let img2 = echarts.init(cont2)
+		option2 = {
+			title: {
+				text: "{a|云计算任务趋势}",
+				textStyle: {
+					color: 'white',
+					fontSize: 15,
+					rich: {
+						a: {
+							backgroundColor: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+									offset: 0,
+									color: 'rgba(9,53,134,1)'
+								},
+								{
+									offset: 1,
+									color: 'rgb(20,32,92,0.6)'
+								}
+							]),
+							width: 520,
+							height: 25,
+							align: 'left'
+						}
+					}
+				},
+			},
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '2%',
+				containLabel: true
+			},
+			xAxis: {
+				type: 'category',
+				// boundaryGap: false,
+				data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Sun'],
+				axisLine: {
+					show: false,
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					color: "rgba(255, 255, 255, 0.8)"
+				},
+
+			},
+			yAxis: [{
+				type: 'value',
+				splitLine: {
+					lineStyle: {
+						// 使用深浅的间隔色
+						color: 'rgba(24,41,87,1)'
+					}
+				},
+				axisLine: {
+					show: false,
+					lineStyle: {
+						color: "rgba(255, 255, 255, 0.8)"
+					}
+				}
+			}],
+			series: [{
+					data: [120, 200, 150, 80, 70, 110, 130, 120, 200, 150, 80, 70, 110, 130, 88],
+					type: 'bar',
+					barWidth: 10,
+					itemStyle: {
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+								offset: 0,
+								color: 'rgba(0,199,221,1)'
+							},
+							{
+								offset: 1,
+								color: 'rgba(0,148,240, 1)'
+							}
+						]),
+						borderRadius: [50, 50, 0, 0]
+					}
+				},
+				{
+					data: [150, 250, 200, 130, 120, 150, 160, 150, 250, 200, 130, 120, 150, 160, 100],
+					type: 'line',
+					symbol: "none",
+					itemStyle: {
+						color: new echarts.graphic.LinearGradient(0, 1, 1, 1, [{
+								offset: 0,
+								color: 'rgba(0,199,221, 1)'
+							},
+							{
+								offset: 0.5,
+								color: 'rgba(0,148,240,1)'
+							},
+							{
+								offset: 0.7,
+								color: 'rgba(0,199,221,1)'
+							},
+							{
+								offset: 1,
+								color: 'rgba(0,148,240,1)'
+							}
+						]),
+					}
+				}
+			],
+		};
+		img2.setOption(option2)
+
+
+		let cont3 = document.getElementById("content3")
+		let img3 = echarts.init(cont3)
+
+		option3 = {
+			title: {
+				text: "{a|云计算总资源}",
+				textStyle: {
+					color: 'white',
+					fontSize: 15,
+					rich: {
+						a: {
+							backgroundColor: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+									offset: 0,
+									color: 'rgba(9,53,134,1)'
+								},
+								{
+									offset: 1,
+									color: 'rgb(20,32,92,0.6)'
+								}
+							]),
+							width: 240,
+							height: 25,
+							align: 'left'
+						}
+					}
+				},
+			},
+			color: ['rgb(2,95,227)', 'rgb(1,174,199)', ],
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '2%',
+				containLabel: true
+			},
+			xAxis: [{
+				type: 'category',
+				boundaryGap: false,
+				data: ['Mon', 'Tue', 'Wed', 'Thu'],
+				axisLine: {
+					show: false,
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					color: "rgba(255, 255, 255, 0.8)"
+				},
+			}],
+			yAxis: [{
+				type: 'value',
+				splitLine: {
+					lineStyle: {
+						// 使用深浅的间隔色
+						color: 'rgba(24,41,87,1)'
+					}
+				},
+				axisLine: {
+					show: false,
+					lineStyle: {
+						color: "rgba(255, 255, 255, 0.8)"
+					}
+				}
+			}],
+			series: [{
+					symbol: "circle",
+					symbolSize: 7,
+					type: 'line',
+					stack: 'Total',
+					smooth: false,
+					lineStyle: {
+						width: 2
+					},
+					areaStyle: {
+						opacity: 0.2,
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+								offset: 0,
+								color: 'rgb(0, 221, 255)'
+							},
+							{
+								offset: 1,
+								color: 'rgb(1,101,242)'
+							}
+						])
+					},
+					emphasis: {
+						focus: 'series'
+					},
+					itemStyle: {
+					      color: new echarts.graphic.LinearGradient(0, 1, 1, 0, [{
+					      		offset: 0,
+					      		color: 'rgba(0,199,221, 1.0)'
+					      	},
+					      	// {
+					      	// 	offset: 0.5,
+					      	// 	color: 'rgba(2,103,244,1)'
+					      	// },
+					      	// {
+					      	// 	offset: 0.7,
+					      	// 	color: 'rgba(2,103,244,1)'
+					      	// },
+					      	{
+					      		offset: 0.5,
+					      		color: 'rgba(2,103,244,1)'
+					      	}
+					      ]),
+					    },
+					data: [140, 232, 101, 264, 90, 340, 250]
+				},
+				{
+					symbol: "circle",
+					symbolSize: 7,
+					name: 'Line 2',
+					type: 'line',
+					stack: 'Total',
+					smooth: false,
+					lineStyle: {
+						width: 2
+					},
+					areaStyle: {
+						opacity: 0.2,
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+								offset: 0,
+								color: 'rgb(0, 221, 255)'
+							},
+							{
+								offset: 1,
+								color: 'rgb(77, 119, 255)'
+							}
+						])
+					},
+					emphasis: {
+						focus: 'series'
+					},
+					itemStyle: {
+					      color: new echarts.graphic.LinearGradient(0, 1, 1, 0, [{
+					      		offset: 0,
+					      		color: 'rgba(107,62,255, 1.0)'
+					      	},
+					      	{
+					      		offset: 0.5,
+					      		color: 'rgba(2,103,244,0.4)'
+					      	}
+					      ]),
+					    },
+					data: [120, 282, 111, 234, 220, 340, 310]
+				},
+			]
+		};
+		img3.setOption(option3)
+
+		let sml1 = document.getElementById("sml1")
+		let smlimg1 = echarts.init(sml1)
+		option4 = {
+			title: {
+				text: "{a|任务分布}",
+				textStyle: {
+					color: 'white',
+					fontSize: 15,
+					rich: {
+						a: {
+							backgroundColor: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+									offset: 0,
+									color: 'rgba(9,53,134,1)'
+								},
+								{
+									offset: 1,
+									color: 'rgb(20,32,92,0.6)'
+								}
+							]),
+							width: 200,
+							height: 25,
+							align: 'left'
+						}
+					}
+				},
+			},
+			radar: {
+				axisLine:{
+					lineStyle: {
+						color: "rgba(36,54,96,1)"
+					}
+				},
+				center: ['50%', '60%'],
+				// shape: 'circle',
+				indicator: [{
+						name: 'A',
+						max: 6500
+					},
+					{
+						name: 'F',
+						max: 16000
+					},
+					{
+						name: 'E',
+						max: 30000
+					},
+					{
+						name: 'D',
+						max: 38000
+					},
+					{
+						name: 'C',
+						max: 52000
+					},
+					{
+						name: 'B',
+						max: 25000
+					}
+				],
+				axisName: {
+					color: "rgba(255, 255, 255, 1)"
+				},
+				splitLine: {
+				      show: true,
+				      lineStyle: {
+				        color: "rgba(36,54,96,1)",
+				        width: 1,
+				        type: "solid",
+						
+				        shadowColor: "rgba(24,41,87,1)"
+				      }
+				    },
+				    splitArea: {
+				      show: false
+				    },
+				nameGap: 8,
+				splitNumber:3,
+
+			},
+			series: [{
+				name: 'Budget vs spending',
+				type: 'radar',
+				symbolSize: 0,
+				data: [{
+						value: [5000, 14000, 25000, 24000, 42000, 21000],
+						name: 'Allocated Budget',
+						itemStyle: {
+						      color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+									offset: 0,
+									color: 'rgba(0,210,230,1)'
+								},
+								{
+									offset: 1,
+									color: 'rgb(0,115,249)'
+								}
+							]),
+						    }
+					},
+					{
+						value: [4200, 12000, 9000, 8000, 8000, 21000],
+						name: 'Actual Spending',
+						itemStyle: {
+						      color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+									offset: 0,
+									color: 'rgba(224,94,52,1)'
+								},
+								{
+									offset: 1,
+									color: 'rgb(250,200,98)'
+								}
+							]),
+						    }
+					}
+				]
+			}]
+		};
+
+
+		smlimg1.setOption(option4)
+
+		let sml2 = document.getElementById("sml2")
+		let smlimg2 = echarts.init(sml2)
+		const gaugeData = [{
+			value: 65,
+			detail: {
+				offsetCenter: ['0%', '10%']
+			}
+		}, ];
+		option5 = {
+
+			title: {
+				text: "{a|任务成功}",
+				textStyle: {
+					color: 'white',
+					fontSize: 15,
+					rich: {
+						a: {
+							backgroundColor: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+									offset: 0,
+									color: 'rgba(9,53,134,1)'
+								},
+								{
+									offset: 1,
+									color: 'rgb(20,32,92,0.6)'
+								}
+							]),
+							width: 200,
+							height: 25,
+							align: 'left'
+						}
+					}
+				},
+			},
+			series: [{
+				center: ['50%', '60%'],
+				type: 'gauge',
+				startAngle: 90,
+				endAngle: -270,
+				pointer: {
+					show: false
+				},
+				progress: {
+					show: true,
+					overlap: false,
+					roundCap: true,
+					clip: false,
+					itemStyle: {
+						borderWidth: 0,
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+								offset: 0,
+								color: 'rgba(0,106,255,1)'
+							},
+							{
+								offset: 1,
+								color: 'rgb(99,64,255)'
+							}
+						]),
+					}
+				},
+				axisLine: {
+					lineStyle: {
+						width: 5,
+						
+					}
+				},
+				splitLine: {
+					show: false,
+					distance: 0,
+					length: 10
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					show: false,
+					distance: 50
+				},
+				data: gaugeData,
+				detail: {
+					formatter: '{value}%',
+					color: "rgba(255, 255, 255, 1)",
+					fontSize: 18
+				}
+			}]
+		};
+		smlimg2.setOption(option5)
+
+		let cont5 = document.getElementById("content5")
+		let img4 = echarts.init(cont5)
+		option6 = {
+			title: {
+				text: "{a|任务完成率}",
+				textStyle: {
+					color: 'white',
+					fontSize: 15,
+					rich: {
+						a: {
+							backgroundColor: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+									offset: 0,
+									color: 'rgba(9,53,134,1)'
+								},
+								{
+									offset: 1,
+									color: 'rgb(20,32,92,0.6)'
+								}
+							]),
+							width: 240,
+							height: 25,
+							align: 'left'
+						}
+					}
+				},
+			},
+
+			color: ['#80FFA5', '#00DDFF', ],
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '2%',
+				containLabel: true,
+				
+			},
+			xAxis: [{
+				type: 'category',
+				boundaryGap: false,
+				data: ['Mon', 'Tue', 'Wed', 'Thu']
+			}],
+			yAxis: [{
+				type: 'value',
+				splitLine: {
+					lineStyle: {
+						// 使用深浅的间隔色
+						color: 'rgba(24,41,87,1)'
+					}
+				},
+			}],
+			
+			series: [{
+
+					type: 'line',
+					stack: 'Total',
+					smooth: false,
+					lineStyle: {
+						width: 0
+					},
+					showSymbol: false,
+					
+					areaStyle: {
+						opacity: 0.8,
+						color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
+								offset: 0,
+								color: 'rgb(35,79,218)'
+							},
+							{
+								offset: 1,
+								color: 'rgb(18,129,203)'
+							}
+						])
+					},
+					emphasis: {
+						focus: 'series'
+					},
+					data: [140, 232, 101, 264, 90, 340, 250]
+				},
+				{
+					name: 'Line 2',
+					type: 'line',
+					stack: 'Total',
+					smooth: false,
+					lineStyle: {
+						width: 0
+					},
+					showSymbol: false,
+					areaStyle: {
+						opacity: 0.8,
+						color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
+								offset: 0,
+								color: 'rgba(115, 29, 185, 1)'
+							},
+							{
+								offset: 1,
+								color: 'rgba(10,74,184, 1)'
+							}
+						])
+					},
+					emphasis: {
+						focus: 'series'
+					},
+					data: [120, 282, 111, 234, 220, 340, 310]
+				},
+			]
+		};
+		img4.setOption(option6)
+
+		let cont7 = document.getElementById("content7")
+		let img5 = echarts.init(cont7)
+		option7 = {
+			title: {
+				text: "{a|平均容量}",
+				textStyle: {
+					color: 'white',
+					fontSize: 15,
+					rich: {
+						a: {
+							backgroundColor: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+									offset: 0,
+									color: 'rgba(9,53,134,1)'
+								},
+								{
+									offset: 1,
+									color: 'rgb(20,32,92,0.6)'
+								}
+							]),
+							width: 240,
+							height: 25,
+							align: 'left'
+						}
+					}
+				},
+			},
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '2%',
+				containLabel: true
+			},
+			dataset: {
+				source: [
+					['product', '2015', '2016', '2017'],
+					['Latte', 43.3, 85.8, 93.7],
+					['Mil', 83.1, 73.4, 55.1],
+					['Chee', 86.4, 65.2, 82.5],
+					['Wal', 72.4, 53.9, 39.1]
+				]
+			},
+			xAxis: {
+				type: 'category'
+			},
+			yAxis: {
+				splitLine: {
+					lineStyle: {
+						// 使用深浅的间隔色
+						color: 'rgba(24,41,87,1)'
+					}
+				},
+			},
+			// Declare several bar series, each will be mapped
+			// to a column of dataset.source by default.
+			series: [{
+				type: 'bar',
+				itemStyle: {
+					color: 'rgba(0,106,255,1)',
+				}
+				
+			}, {
+				type: 'bar',
+				itemStyle: {
+					color: 'rgba(0,199,221,1)'
+				}
+			}]
+		};
+		img5.setOption(option7)
+
+		let cont8 = document.getElementById("content8")
+		let img6 = echarts.init(cont8)
+		option8 = {
+			title: {
+				text: "{a|存储容量}",
+				textStyle: {
+					color: 'white',
+					fontSize: 15,
+					rich: {
+						a: {
+							backgroundColor: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+									offset: 0,
+									color: 'rgba(9,53,134,1)'
+								},
+								{
+									offset: 1,
+									color: 'rgb(20,32,92,0.6)'
+								}
+							]),
+							width: 240,
+							height: 25,
+							align: 'left'
+						}
+					}
+				},
+			},
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '2%',
+				containLabel: true
+			},
+			dataset: {
+				source: [
+					['score', 'amount', 'product'],
+					[89.3, 182, 'Mat'],
+					[57.1, 182, 'Mil'],
+					[74.4, 110, 'Che'],
+					[50.1, 125, 'Chee'],
+					[89.7, 205, 'Ma'],
+					[68.1, 196, 'Tea'],
+					[19.6, 112, 'Orae'],
+					[10.6, 182, 'Laa'],
+					[32.7, 212, 'Wa']
+				]
+			},
+			xAxis: {
+				name: 'amount',
+				splitLine: {
+					lineStyle: {
+						// 使用深浅的间隔色
+						color: 'rgba(24,41,87,1)'
+					}
+				},
+			},
+			yAxis: {
+				type: 'category',
+				
+			},
+			series: [{
+				type: 'bar',
+				encode: {
+					x: 'amount',
+					y: 'product'
+				},
+				itemStyle: {
+				        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+				          { offset: 0, color: 'rgb(0,118,253)' },
+				          { offset: 1, color: 'rgb(0,198,221)' }
+				        ])
+				      },
+			}]
+		};
+		img6.setOption(option8)
+
+
+		let cont9 = document.getElementById("content9")
+		let img7 = echarts.init(cont9)
+		const gaugeData1 = [{
+			value: 80,
+			detail: {
+				offsetCenter: ['0%', '10%']
+			}
+		}, ];
+		option8 = {
+			title: {
+				text: "{a|CPU利用率}",
+				textStyle: {
+					color: 'white',
+					fontSize: 15,
+					rich: {
+						a: {
+							backgroundColor: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+									offset: 0,
+									color: 'rgba(9,53,134,1)'
+								},
+								{
+									offset: 1,
+									color: 'rgb(20,32,92,0.6)'
+								}
+							]),
+							width: 240,
+							height: 25,
+							align: 'left'
+						}
+					}
+				},
+			},
+			series: [{
+				center: ['50%', '60%'],
+				type: 'gauge',
+				startAngle: 90,
+				endAngle: -270,
+				pointer: {
+					show: false
+				},
+				progress: {
+					show: true,
+					overlap: false,
+					roundCap: true,
+					clip: false,
+					itemStyle: {
+						borderWidth: 0,
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+								offset: 0,
+								color: 'rgba(0,106,255,1)'
+							},
+							{
+								offset: 1,
+								color: 'rgb(99,64,255)'
+							}
+						]),
+					}
+				},
+				axisLine: {
+					lineStyle: {
+						width: 10
+					}
+				},
+				splitLine: {
+					show: false,
+					distance: 0,
+					length: 10
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					show: false,
+					distance: 50
+				},
+				data: gaugeData1,
+				detail: {
+					formatter: '{value}%',
+					color: "rgba(255, 255, 255, 1)",
+					fontSize: 30
+				}
+			}]
+		};
+		img7.setOption(option8)
+
+
+		let cont10 = document.getElementById("content10")
+		let img8 = echarts.init(cont10)
+		option9 = {
+			title: {
+				text: "{a|内存利用率}",
+				textStyle: {
+					color: 'white',
+					fontSize: 15,
+					rich: {
+						a: {
+							backgroundColor: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+									offset: 0,
+									color: 'rgba(9,53,134,1)'
+								},
+								{
+									offset: 1,
+									color: 'rgb(20,32,92,0.6)'
+								}
+							]),
+							width: 240,
+							height: 25,
+							align: 'left'
+						}
+					}
+				},
+			},
+			color: ['rgb(2,95,227)', 'rgb(1,174,199)', ],
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '2%',
+				containLabel: true
+			},
+			xAxis: [{
+				type: 'category',
+				boundaryGap: false,
+				data: ['202', '203', '204', '205'],
+				axisLine: {
+					show: false,
+				},
+				axisTick: {
+					show: false
+				},
+				axisLabel: {
+					color: "rgba(255, 255, 255, 0.8)"
+				},
+			}],
+			yAxis: [{
+				type: 'value',
+				splitLine: {
+					lineStyle: {
+						// 使用深浅的间隔色
+						color: 'rgba(24,41,87,1)'
+					}
+				},
+				axisLine: {
+					show: false,
+					lineStyle: {
+						color: "rgba(255, 255, 255, 0.8)"
+					}
+				}
+			}],
+			series: [{
+			
+					type: 'line',
+					stack: 'Total',
+					smooth: true,
+					lineStyle: {
+						width: 2
+					},
+					showSymbol: false,
+					areaStyle: {
+						opacity: 0.8,
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+								offset: 0,
+								color: 'rgba(0, 221, 255,0.1)'
+							},
+							{
+								offset: 1,
+								color: 'rgba(1,101,242,0.5)'
+							}
+						])
+					},
+					emphasis: {
+						focus: 'series'
+					},
+					data: [140, 232, 101, 264, 90, 340, 250]
+				},
+				{
+					name: 'Line 2',
+					type: 'line',
+					stack: 'Total',
+					smooth: true,
+					lineStyle: {
+						width: 2
+					},
+					showSymbol: false,
+					areaStyle: {
+						opacity: 0.2,
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+								offset: 0,
+								color: 'rgb(0, 221, 255)'
+							},
+							{
+								offset: 1,
+								color: 'rgb(1,101,242)'
+							}
+						])
+					},
+					emphasis: {
+						focus: 'series'
+					},
+					data: [120, 282, 111, 234, 220, 340, 310]
+				},
+			]
+		};
+		img8.setOption(option9)
+	</script>
+</html>
